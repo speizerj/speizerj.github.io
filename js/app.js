@@ -1,7 +1,7 @@
 
 //load the airport position data and create the firebase object
 define(function (require) {
-	var airports = require('/data/airports');
+	var airports = require('./data/airports');
 });
 
 var firebase = new Firebase('https://publicdata-airports.firebaseio.com/');
