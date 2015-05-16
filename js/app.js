@@ -79,6 +79,7 @@ var app = {
 				}
 
 				that.$airportSelect.val(closeAirport);
+				that.$airportSelect.trigger("change");
 
 			});
 		} else {
