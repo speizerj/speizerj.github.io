@@ -79,6 +79,7 @@ var app = {
 				}
 
 				that.$airportSelect.val(closeAirport);
+				that.$airportInfoDescription.html('<p>loading</p>');
 				that.$airportSelect.trigger("change");
 
 			});
