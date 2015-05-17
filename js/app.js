@@ -11,8 +11,8 @@ var firebase = new Firebase('https://publicdata-airports.firebaseio.com/');
 
 var app = {
 	$airportSelect: null,
-	$airportInfoTitle: null,
-	$airportInfoDescription: null,
+	$title: null,
+	$subtitle: null,
 
 	/*
 	*	Initialize the app
@@ -21,9 +21,9 @@ var app = {
 
 	init: function() {
 		//Register the DOM elements
-		this.$airportSelect = $("#airportSelect");
-		this.$airportInfoTitle = $("#airportInfoTitle");
-		this.$airportInfoDescription = $("#airportInfoDescription");
+		this.$airportSelect = $(".airport-select");
+		this.$title = $(".title");
+		this.$subtitle = $(".subtitle");
 
 		//Get ready for user manually changing location
 		this.changeLocation();
@@ -79,7 +79,6 @@ var app = {
 				}
 
 				that.$airportSelect.val(closeAirport);
-				that.$airportInfoDescription.html('<p>loading</p>');
 				that.$airportSelect.trigger("change");
 
 			});
@@ -107,13 +106,13 @@ var app = {
 	delayNotify: function(snapshot) {
 		var html = '';
 		var a = snapshot.val();
-		this.$airportInfoTitle.html('<h1>'+a.IATA+' - '+a.name+'</h1>');
+		this.$title.html('<h1>'+a.IATA+' - '+a.name+'</h1>');
 		if (a.delay) {
 			html = '<p>There is currently an average delay of '+a.avg+' minutes. The FAA has listed the following reason for the delay: '+a.reason+'</p>';
 		} else {
 			html = '<p>There are no known delays for this airport.</p>';
 		}
-		this.$airportInfoDescription.html(html);
+		this.$subtitle.html(html);
 	},
 
 
