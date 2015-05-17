@@ -105,10 +105,18 @@ var app = {
 
 	delayNotify: function(snapshot) {
 		var html = '';
+		var avg = '';
 		var a = snapshot.val();
 		this.$title.html('<h1>'+a.IATA+' - '+a.name+'</h1>');
 		if (a.delay) {
-			html = '<p>There is currently an average delay of '+a.avg+' minutes. The FAA has listed the following reason for the delay: '+a.reason+'</p>';
+			var stat = a.status;
+			if (stat.avgDelay) {
+				avg = ', with an average delay of about <strong>'+stat.avgDelay+'</strong>.';
+			} else {
+				avg = '.';
+			}
+			html = '<p>This airport is currently experiencing delays between <strong>'+stat.minDelay+'</strong> and <strong>'+stat.maxDelay+'</strong>'+avg+' The FAA has listed the following reason for the delay: <strong>'+stat.reason+'</strong>.';
+			html += " It's currently effecting <strong>"+stat.type+'s</strong> and the trend is <strong>'+stat.trend+'</strong>.</p>';
 		} else {
 			html = '<p>There are no known delays for this airport.</p>';
 		}
