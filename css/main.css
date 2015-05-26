@@ -109,6 +109,7 @@ h3 {
 .container {
 	max-width:960px;
 	margin: 10px auto;
+	padding:0 10px;
 }
 
 .logo {
@@ -121,6 +122,7 @@ h3 {
 .tagline {
 	font-size:16px;
 	display:inline-block;
+	margin-top:15px;
 }
 
 .primary-header {
@@ -129,7 +131,7 @@ h3 {
 }
 
 .hero {
-	padding: 50px 0;
+	padding: 100px 0;
 	text-align:center;
 	border-bottom:1px solid #F4F7F9;
 }
@@ -146,12 +148,10 @@ h3 {
 
 .airport-select {
 	min-width:75px;
-	min-height:30px;
-	border-radius:10px;
 }
 
 .about {
-	padding:20px 0;
+	padding:50px 0;
 	border-bottom:1px solid #F4F7F9;
 }
 
