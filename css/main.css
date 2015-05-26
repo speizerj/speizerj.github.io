@@ -163,3 +163,28 @@ h3 {
 .primary-footer {
 	padding:50px 0;
 }
+
+/* mobile stuff */
+
+@media only screen and (max-device-width: 480px) {
+	.hero {
+		padding:10px 0;
+	}
+	.primary-header {
+		padding-top:10px;
+	}
+	h1 {
+	font-size:36px;
+	}
+
+	h2 {
+	font-size:24px;
+	}
+
+	h3 {
+	font-size:18px;
+	}
+	.subtitle {
+		line-height:24px;
+	}
+}
